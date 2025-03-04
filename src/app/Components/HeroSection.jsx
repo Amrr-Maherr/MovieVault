@@ -9,37 +9,67 @@ const movies = [
   {
     title: "The Dark Knight",
     image: "/Assets/wallpaperflare.com_wallpaper (2).jpg",
-    textColor: "text-zinc-300",
   },
   {
     title: "Inception",
     image: "/Assets/wallpaperflare.com_wallpaper (3).jpg",
-    textColor: "text-indigo-200",
   },
   {
     title: "Interstellar",
     image: "/Assets/wallpaperflare.com_wallpaper (4).jpg",
-    textColor: "text-amber-100",
   },
   {
     title: "Captain America",
     image: "/Assets/cap.jpg",
-    textColor: "text-red-400",
   },
   {
     title: "John Wick",
     image: "/Assets/jhon.jpg",
-    textColor: "text-stone-400",
   },
   {
     title: "Loki",
     image: "/Assets/loky.jpg",
-    textColor: "text-green-300",
+  },
+  {
+    title: "Avengers: Endgame",
+    image: "/Assets/endgame.jpg",
+  },
+  {
+    title: "Spider-Man: No Way Home",
+    image: "/Assets/spiderMan.jpg",
+  },
+  {
+    title: "The Matrix",
+    image: "/Assets/matrix.jpg",
+  },
+  {
+    title: "Joker",
+    image: "/Assets/joker.jpg",
+  },
+  {
+    title: "Fight Club",
+    image: "/Assets/Fight Club.jpg",
+  },
+  {
+    title: "The Godfather",
+    image: "/Assets/The Godfather.jpg",
+  },
+  {
+    title: "Shutter Island",
+    image: "/Assets/Shutter Island.jpg",
+  },
+  {
+    title: "Gladiator",
+    image: "/Assets/Gladiator.jpg",
+  },
+  {
+    title: "The Wolf of Wall Street",
+    image: "/Assets/The Wolf of Wall Street.jpg",
   },
 ];
 
-const buttonColor = "bg-gray-700 hover:bg-gray-600"; // لون الزر المحايد
-const buttonText = "text-gray-100"; // لون نص الزر
+const buttonColor = "bg-gray-700 hover:bg-gray-600";
+const buttonText = "text-gray-100";
 
 export default function HeroSection() {
   return (
@@ -64,9 +94,7 @@ export default function HeroSection() {
               />
             </div>
             <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-              <h1
-                className={`text-5xl md:text-6xl font-bold ${movie.textColor} drop-shadow-lg`}
-              >
+              <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg">
                 {movie.title}
               </h1>
               <button
