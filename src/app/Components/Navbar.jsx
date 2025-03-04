@@ -1,0 +1,153 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import Logo from "../../../public/popcorn-svgrepo-com.svg";
+import { motion } from "framer-motion";
+
+export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  return (
+    <motion.nav
+      className="bg-gray-800"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div className="relative flex h-16 items-center justify-between">
+          {/* Mobile menu button */}
+          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              type="button"
+              className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-inset focus:ring-white focus:outline-none"
+              aria-controls="mobile-menu"
+              aria-expanded={isMobileMenuOpen}
+              onClick={toggleMobileMenu}
+            >
+              <span className="absolute -inset-0.5"></span>
+              <span className="sr-only">Open main menu</span>
+              <svg
+                className={`${isMobileMenuOpen ? "hidden" : "block"} size-6`}
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <svg
+                className={`${isMobileMenuOpen ? "block" : "hidden"} size-6`}
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </motion.button>
+          </div>
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <motion.div
+              className="flex shrink-0 items-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <img className="h-8 w-auto" src={Logo.src} alt="Your Company" />
+              <h2 className="ml-3 text-3xl text-white">Movie Vault</h2>
+            </motion.div>
+            <div className="hidden sm:ml-6 sm:block">
+              <motion.div
+                className="flex space-x-4"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              >
+                <Link
+                  href="/"
+                  className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/team"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >
+                  Movies
+                </Link>
+                <Link
+                  href="/projects"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >
+                  Actors
+                </Link>
+                <Link
+                  href="/calendar"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >
+                  Genres
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile menu with animation */}
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{
+          height: isMobileMenuOpen ? "auto" : 0,
+          opacity: isMobileMenuOpen ? 1 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+        className="overflow-hidden sm:hidden"
+        id="mobile-menu"
+      >
+        <div className="space-y-1 px-2 pt-2 pb-3">
+          <Link
+            href="/"
+            className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+          >
+            Dashboard
+          </Link>
+          <Link
+            href="/team"
+            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >
+            Team
+          </Link>
+          <Link
+            href="/projects"
+            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >
+            Projects
+          </Link>
+          <Link
+            href="/calendar"
+            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >
+            Calendar
+          </Link>
+        </div>
+      </motion.div>
+    </motion.nav>
+  );
+}
