@@ -99,55 +99,22 @@ export default function Navbar() {
                   Actors
                 </Link>
                 <Link
-                  href="/calendar"
+                  href="/Contact"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
-                  Genres
+                  Contact us
+                </Link>
+                <Link
+                  href="/About"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >
+                  About
                 </Link>
               </motion.div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Mobile menu with animation */}
-      <motion.div
-        initial={{ height: 0, opacity: 0 }}
-        animate={{
-          height: isMobileMenuOpen ? "auto" : 0,
-          opacity: isMobileMenuOpen ? 1 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className="overflow-hidden sm:hidden"
-        id="mobile-menu"
-      >
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          <Link
-            href="/"
-            className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-          >
-            Dashboard
-          </Link>
-          <Link
-            href="/team"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          >
-            Team
-          </Link>
-          <Link
-            href="/projects"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          >
-            Projects
-          </Link>
-          <Link
-            href="/calendar"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          >
-            Calendar
-          </Link>
-        </div>
-      </motion.div>
     </motion.nav>
   );
 }
