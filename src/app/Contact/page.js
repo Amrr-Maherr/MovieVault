@@ -17,7 +17,7 @@ export default function ContactUs() {
             Contact Us
           </h2>
           <p className="mt-6 text-lg leading-8">
-            Have any questions or inquiries? Reach out to us and we'll be happy
+            Have any questions or inquiries? Reach out to us and we will be happy
             to assist you.
           </p>
         </div>
