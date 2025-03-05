@@ -3,6 +3,7 @@
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import { motion } from "framer-motion";
+import Link from "next/link"; // Import Link
 
 export default function About() {
   return (
@@ -40,12 +41,12 @@ export default function About() {
           >
             Explore Movies
           </a>
-          <a
+          <Link
             href="/contact"
             className="px-6 py-2 bg-gray-800 rounded-lg text-white font-semibold hover:bg-gray-700 transition"
           >
             Contact Us
-          </a>
+          </Link>
         </motion.div>
       </div>
       <Footer />
