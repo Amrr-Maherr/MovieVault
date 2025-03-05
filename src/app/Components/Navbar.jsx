@@ -94,16 +94,10 @@ export default function Navbar() {
                   Home
                 </Link>
                 <Link
-                  href="/team"
+                  href="/Movies"
                   className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 >
                   Movies
-                </Link>
-                <Link
-                  href="/projects"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                >
-                  Actors
                 </Link>
                 <Link
                   href="/Contact"
@@ -140,12 +134,6 @@ export default function Navbar() {
             className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
           >
             Movies
-          </Link>
-          <Link
-            href="/projects"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-          >
-            Actors
           </Link>
           <Link
             href="/Contact"
