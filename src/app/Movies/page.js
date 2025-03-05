@@ -35,7 +35,7 @@ export default function Movies() {
     <>
       <Navbar />
       {loading ? (
-        <Loader />
+        <Loader key="loader" /> // Add key to the Loader component
       ) : (
         <div className="bg-black py-12 text-white">
           <div className="container mx-auto px-4">
@@ -107,14 +107,6 @@ export default function Movies() {
                           {movie.plot}
                         </p>
                       </div>
-                      <a
-                        href={movie.trailer}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute top-2 right-2 bg-gray-800 bg-opacity-75 hover:bg-opacity-100 text-white text-xs font-bold py-1 px-2 rounded-full transition-colors duration-200"
-                      >
-                        Watch Trailer
-                      </a>
                     </motion.div>
                   </Link>
                 ))
